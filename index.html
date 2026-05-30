@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-SG">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maison Lumière — Upscale French dining in Singapore. Reserve your table online for an unforgettable culinary experience." />
-  <title>Maison Lumière | Fine French Dining · Singapore</title>
+  <meta name="description" content="龍廷 Long Ting — Imperial Chinese fine dining in Singapore. Reserve your table for an unforgettable journey through dynastic culinary heritage." />
+  <title>龍廷 Long Ting | Imperial Chinese Fine Dining · Singapore</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Ma+Shan+Zheng&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Skip link for keyboard users -->
   <a href="#menu" class="skip-link">Skip to main content</a>
 
   <!-- ======================================================
@@ -22,8 +21,9 @@
   ====================================================== -->
   <header class="site-header" role="banner">
     <nav class="nav" aria-label="Main navigation">
-      <a class="nav__logo" href="#hero" aria-label="Maison Lumière — return to top">
-        Maison Lumière
+      <a class="nav__logo" href="#hero" aria-label="龍廷 Long Ting — return to top">
+        <span class="nav__logo-zh">龍廷</span>
+        <span class="nav__logo-en">Long Ting</span>
       </a>
 
       <button
@@ -50,13 +50,27 @@
     <!-- ======================================================
          HERO
     ====================================================== -->
-    <section id="hero" class="hero" aria-label="Welcome to Maison Lumière">
+    <section id="hero" class="hero" aria-label="Welcome to Long Ting">
       <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__lattice" aria-hidden="true"></div>
+      <div class="hero__char" aria-hidden="true">龍</div>
       <div class="hero__content">
-        <p class="hero__eyebrow">Est. 2008 &middot; Singapore</p>
-        <h1 class="hero__title">Maison Lumière</h1>
-        <p class="hero__tagline">Authentic French cuisine in the heart of the city</p>
-        <a href="#reservations" class="btn btn--primary">Reserve a Table</a>
+        <p class="hero__eyebrow">Est. 1988 &middot; Singapore</p>
+        <div class="hero__title-wrap">
+          <h1 class="hero__title-zh">龍廷</h1>
+          <p class="hero__title-en">Long Ting</p>
+        </div>
+        <p class="hero__tagline">Imperial Chinese Fine Dining</p>
+        <div class="hero__ornament" aria-hidden="true">
+          <span class="hero__ornament-line"></span>
+          <span>❀</span>
+          <span class="hero__ornament-line"></span>
+        </div>
+        <a href="#reservations" class="btn btn--primary">Reserve Your Table</a>
+      </div>
+      <div class="hero__lanterns" aria-hidden="true">
+        <div class="lantern lantern--left"></div>
+        <div class="lantern lantern--right"></div>
       </div>
     </section>
 
@@ -67,64 +81,136 @@
       <div class="container">
 
         <div class="section-header fade-in">
-          <p class="section-eyebrow">Curated with Passion</p>
-          <h2 id="menu-heading" class="section-title">Our Menu</h2>
-          <div class="section-divider" aria-hidden="true"></div>
-          <p class="section-intro">Each dish is crafted from the finest seasonal produce, inspired by the great culinary traditions of France.</p>
+          <p class="section-eyebrow">Curated with Imperial Grace</p>
+          <h2 id="menu-heading" class="section-title">御膳菜單</h2>
+          <p class="section-title-sub">The Imperial Menu</p>
+          <div class="section-divider" aria-hidden="true"><span>❀</span></div>
+          <p class="section-intro">Each dish honours centuries of dynastic culinary tradition, elevated through the hands of our master chefs trained in the great kitchens of Beijing, Guangzhou, and Chengdu.</p>
         </div>
 
-        <!-- Entrées -->
+        <!-- 冷盤 Cold Starters -->
         <div class="menu-category fade-in">
-          <h3 class="menu-category__title">Entr&eacute;es</h3>
+          <h3 class="menu-category__title">
+            <span class="menu-category__zh">冷盤</span>
+            <span class="menu-category__en">Cold Starters</span>
+          </h3>
           <div class="menu-grid">
 
-            <article class="menu-card" aria-label="Escargots de Bourgogne">
+            <article class="menu-card" aria-label="Zhenjiang Crystal Pork Terrine">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1559742811-822873691df8?w=600&q=80"
-                  alt="Escargots de Bourgogne — garlicky Burgundy snails nestled in their shells, baked in herb butter"
+                  src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80"
+                  alt="Zhenjiang Crystal Pork Terrine — slow-pressed pork knuckle set in spiced aspic"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Escargots de Bourgogne</h4>
-                <p class="menu-card__desc">Classic Burgundy snails baked in parsley-garlic butter, served with crusty baguette</p>
+                <p class="menu-card__zh">鎮江肴肉</p>
+                <h4 class="menu-card__name">Zhenjiang Crystal Pork Terrine</h4>
+                <p class="menu-card__desc">Slow-pressed pork knuckle set in spiced Zhenjiang vinegar aspic, served with ginger julienne and aged black vinegar</p>
                 <p class="menu-card__price">S$28</p>
               </div>
             </article>
 
-            <article class="menu-card" aria-label="Terrine de Foie Gras">
+            <article class="menu-card" aria-label="Husband and Wife Beef Slices">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80"
-                  alt="Terrine de Foie Gras — silky duck liver terrine sliced and plated with golden brioche toast"
+                  src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80"
+                  alt="Husband and Wife Beef Slices — thinly sliced beef and tendon in Sichuan chilli oil"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Terrine de Foie Gras</h4>
-                <p class="menu-card__desc">Silky duck liver terrine with Sauternes jelly, toasted brioche, and fig compote</p>
-                <p class="menu-card__price">S$42</p>
+                <p class="menu-card__zh">夫妻肺片</p>
+                <h4 class="menu-card__name">Husband &amp; Wife Beef Slices</h4>
+                <p class="menu-card__desc">Heritage Sichuan preparation of thinly sliced beef, tendon, and tripe dressed in signature chilli oil and flowering Sichuan peppercorn</p>
+                <p class="menu-card__price">S$32</p>
               </div>
             </article>
 
-            <article class="menu-card" aria-label="Soupe à l'Oignon Gratinée">
+            <article class="menu-card" aria-label="Garlic-Dressed Pork Belly">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
-                  alt="Soupe à l'Oignon Gratinée — French onion soup with a golden Gruyère crust bubbling on top"
+                  src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=80"
+                  alt="Garlic-Dressed Pork Belly — white-cooked pork belly with garlic sesame dressing"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Soupe &agrave; l&rsquo;Oignon Gratin&eacute;e</h4>
-                <p class="menu-card__desc">Slow-caramelised onion broth topped with a golden aged Gruyère crust, finished under the grill</p>
+                <p class="menu-card__zh">蒜泥白肉</p>
+                <h4 class="menu-card__name">Garlic-Dressed Pork Belly</h4>
+                <p class="menu-card__desc">Silky white-cooked Berkshire pork belly, draped in house-made garlic paste with aged soy, chilli oil, and toasted sesame</p>
+                <p class="menu-card__price">S$26</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- 點心 Dim Sum -->
+        <div class="menu-category fade-in">
+          <h3 class="menu-category__title">
+            <span class="menu-category__zh">點心</span>
+            <span class="menu-category__en">Dim Sum Signatures</span>
+          </h3>
+          <div class="menu-grid">
+
+            <article class="menu-card" aria-label="Crab Roe Xiaolongbao">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&q=80"
+                  alt="Crab Roe Xiaolongbao — delicate steamed soup dumplings with hairy crab roe"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <p class="menu-card__zh">蟹黃小籠包</p>
+                <h4 class="menu-card__name">Crab Roe Xiaolongbao <span class="menu-card__count">(6 pcs)</span></h4>
+                <p class="menu-card__desc">Hand-pleated soup dumplings bursting with hairy crab roe, Jinhua ham, and slow-simmered pork broth sealed in gossamer-thin skin</p>
+                <p class="menu-card__price">S$36</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="King Prawn Har Gow">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80"
+                  alt="King Prawn Har Gow — translucent steamed prawn dumplings with a crystalline skin"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <p class="menu-card__zh">蝦餃皇</p>
+                <h4 class="menu-card__name">King Prawn Har Gow <span class="menu-card__count">(4 pcs)</span></h4>
+                <p class="menu-card__desc">Whole wild-caught tiger prawns wrapped in a luminous 22-pleat wheat starch skin, steamed to order in our bamboo baskets</p>
+                <p class="menu-card__price">S$28</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Honey BBQ Pork Pastry">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=600&q=80"
+                  alt="Honey BBQ Pork Pastry — flaky golden char siu puffs with a lacquered honey glaze"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <p class="menu-card__zh">叉燒酥</p>
+                <h4 class="menu-card__name">Honey BBQ Pork Pastry <span class="menu-card__count">(3 pcs)</span></h4>
+                <p class="menu-card__desc">Airy honeycomb-laminated pastry encasing slow-roasted ibérico char siu glazed with aged honey and osmanthus blossom</p>
                 <p class="menu-card__price">S$22</p>
               </div>
             </article>
@@ -132,118 +218,130 @@
           </div>
         </div>
 
-        <!-- Plats Principaux -->
+        <!-- 主菜 Main Courses -->
         <div class="menu-category fade-in">
-          <h3 class="menu-category__title">Plats Principaux</h3>
+          <h3 class="menu-category__title">
+            <span class="menu-category__zh">主菜</span>
+            <span class="menu-category__en">Main Courses</span>
+          </h3>
           <div class="menu-grid">
 
-            <article class="menu-card" aria-label="Coq au Vin à l'Ancienne">
+            <article class="menu-card" aria-label="Peking Duck">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80"
-                  alt="Coq au Vin à l'Ancienne — free-range chicken braised in red Burgundy wine with mushrooms and lardons"
+                  src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80"
+                  alt="Peking Duck — lacquered whole duck carved tableside with crisp mahogany skin"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Coq au Vin &agrave; l&rsquo;Ancienne</h4>
-                <p class="menu-card__desc">Free-range chicken braised in Burgundy wine with lardons, pearl onions, and wild mushrooms</p>
-                <p class="menu-card__price">S$58</p>
+                <p class="menu-card__zh">北京烤鴨</p>
+                <h4 class="menu-card__name">Peking Duck <span class="menu-card__count">(whole, two services)</span></h4>
+                <p class="menu-card__desc">Imperial-breed duck air-dried 48 hours, roasted in a fruitwood oven. First service: shatteringly crisp skin with hoisin. Second service: duck consommé with hand-torn noodles</p>
+                <p class="menu-card__price">S$188</p>
               </div>
             </article>
 
-            <article class="menu-card" aria-label="Confit de Canard">
+            <article class="menu-card" aria-label="Steamed Garoupa">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80"
-                  alt="Confit de Canard — crispy-skinned slow-cooked duck leg served with golden Sarladaise potatoes"
+                  src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80"
+                  alt="Steamed Garoupa — live coral garoupa steamed with ginger and superior soy"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Confit de Canard</h4>
-                <p class="menu-card__desc">Slow-cooked duck leg with crackling skin, Sarladaise potatoes, and cherry-port jus</p>
-                <p class="menu-card__price">S$68</p>
+                <p class="menu-card__zh">清蒸石斑魚</p>
+                <h4 class="menu-card__name">Steamed Garoupa with Superior Soy</h4>
+                <p class="menu-card__desc">Live coral garoupa steamed for precisely seven minutes over ginger and aged Shaoxing wine, finished with sizzling superior soy and spring onion oil</p>
+                <p class="menu-card__price">市價 · Market Price</p>
               </div>
             </article>
 
-            <article class="menu-card" aria-label="Bouillabaisse Marseillaise">
+            <article class="menu-card" aria-label="Silken Tofu with Sichuan Spiced Minced Beef">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=600&q=80"
-                  alt="Bouillabaisse Marseillaise — traditional Provençal seafood stew with rouille and croutons"
+                  src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80"
+                  alt="Mapo Tofu — silken tofu in a fiery Sichuan doubanjiang sauce with wagyu minced beef"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Bouillabaisse Marseillaise</h4>
-                <p class="menu-card__desc">Traditional Provençal seafood stew with saffron broth, rouille, croutons, and Parmesan</p>
-                <p class="menu-card__price">S$72</p>
+                <p class="menu-card__zh">麻婆豆腐</p>
+                <h4 class="menu-card__name">Silken Tofu · Sichuan Spiced Wagyu</h4>
+                <p class="menu-card__desc">Japanese silken tofu braised in our 30-year-old doubanjiang sauce with wagyu minced beef, aged Pixian chilli bean paste, and Sichuan peppercorn oil</p>
+                <p class="menu-card__price">S$38</p>
               </div>
             </article>
 
           </div>
         </div>
 
-        <!-- Desserts -->
+        <!-- 甜品 Desserts -->
         <div class="menu-category fade-in">
-          <h3 class="menu-category__title">Desserts</h3>
+          <h3 class="menu-category__title">
+            <span class="menu-category__zh">甜品</span>
+            <span class="menu-category__en">Desserts</span>
+          </h3>
           <div class="menu-grid">
 
-            <article class="menu-card" aria-label="Crème Brûlée à la Vanille">
+            <article class="menu-card" aria-label="Mango Pancake with Fresh Cream">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80"
-                  alt="Crème Brûlée à la Vanille — silky vanilla custard with a perfectly caramelised sugar crust"
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
+                  alt="Mango Pancake — delicate crepe parcels filled with Alphonso mango and Hokkaido cream"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Cr&egrave;me Br&ucirc;l&eacute;e &agrave; la Vanille</h4>
-                <p class="menu-card__desc">Silky Madagascar vanilla custard beneath a crackling caramelised sugar crust</p>
+                <p class="menu-card__zh">芒果班戟</p>
+                <h4 class="menu-card__name">Mango Pancake with Fresh Cream</h4>
+                <p class="menu-card__desc">Tissue-thin crêpe encasing whole Alphonso mango batons and Hokkaido double cream, dusted with edible gold leaf and butterfly pea flower</p>
                 <p class="menu-card__price">S$18</p>
               </div>
             </article>
 
-            <article class="menu-card" aria-label="Tarte Tatin Caramélisée">
+            <article class="menu-card" aria-label="Osmanthus Glutinous Rice Balls">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80"
-                  alt="Tarte Tatin Caramélisée — upside-down caramelised apple tart served warm with crème fraîche"
+                  src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80"
+                  alt="Osmanthus Rice Balls — soft glutinous dumplings in warm osmanthus flower broth"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Tarte Tatin Caramel&iacute;s&eacute;e</h4>
-                <p class="menu-card__desc">Upside-down caramelised apple tart, warm from the oven, with a cloud of crème fraîche</p>
-                <p class="menu-card__price">S$20</p>
+                <p class="menu-card__zh">桂花湯圓</p>
+                <h4 class="menu-card__name">Osmanthus Glutinous Rice Balls</h4>
+                <p class="menu-card__desc">Hand-rolled rice balls filled with black sesame paste, served in a fragrant osmanthus blossom and aged Shaoxing wine broth</p>
+                <p class="menu-card__price">S$16</p>
               </div>
             </article>
 
-            <article class="menu-card" aria-label="Soufflé au Chocolat Noir">
+            <article class="menu-card" aria-label="Mango Pomelo Sago">
               <div class="menu-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80"
-                  alt="Soufflé au Chocolat Noir — a warm dark chocolate soufflé risen to perfection in its ramekin"
+                  src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&q=80"
+                  alt="Mango Pomelo Sago — chilled mango cream with pomelo pearls and sago"
                   loading="lazy"
                   width="600"
                   height="450"
                 />
               </div>
               <div class="menu-card__body">
-                <h4 class="menu-card__name">Souffl&eacute; au Chocolat Noir</h4>
-                <p class="menu-card__desc">Warm dark chocolate soufflé, risen to order, served with Tahitian vanilla ice cream</p>
-                <p class="menu-card__price">S$24</p>
+                <p class="menu-card__zh">楊枝甘露</p>
+                <h4 class="menu-card__name">Mango Pomelo Sago</h4>
+                <p class="menu-card__desc">Chilled Alphonso mango cream with freshwater sago pearls, hand-segmented Thai pomelo, and condensed coconut milk — a Hong Kong classic perfected</p>
+                <p class="menu-card__price">S$16</p>
               </div>
             </article>
 
@@ -256,39 +354,40 @@
     <!-- ======================================================
          TESTIMONIALS
     ====================================================== -->
-    <section id="testimonials" class="testimonials section section--dark" aria-labelledby="testimonials-heading">
+    <section id="testimonials" class="testimonials section" aria-labelledby="testimonials-heading">
       <div class="container">
 
         <div class="section-header fade-in">
           <p class="section-eyebrow">Guest Experiences</p>
-          <h2 id="testimonials-heading" class="section-title">What Our Guests Say</h2>
-          <div class="section-divider" aria-hidden="true"></div>
+          <h2 id="testimonials-heading" class="section-title">賓客之聲</h2>
+          <p class="section-title-sub">What Our Guests Say</p>
+          <div class="section-divider" aria-hidden="true"><span>❀</span></div>
         </div>
 
         <div class="carousel" role="region" aria-label="Guest testimonials">
           <div class="carousel__track" id="carousel-track" aria-live="polite">
 
-            <article class="testimonial-card" aria-label="Testimonial from Isabelle Moreau">
+            <article class="testimonial-card" aria-label="Testimonial from Wei Ling Chen">
               <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
                 <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
               <blockquote class="testimonial-card__quote">
-                &ldquo;An extraordinary evening. The duck confit melted in my mouth, and the sommelier&rsquo;s pairing was inspired. Maison Lumière is in a class entirely of its own.&rdquo;
+                &ldquo;The Peking Duck carved tableside was a theatre of perfection — mahogany skin shattering like lacquer porcelain, the flesh impossibly tender. Long Ting exists in a category entirely its own.&rdquo;
               </blockquote>
               <footer class="testimonial-card__footer">
-                <p class="testimonial-card__name">&mdash; Isabelle Moreau</p>
+                <p class="testimonial-card__name">&mdash; Wei Ling Chen</p>
               </footer>
             </article>
 
-            <article class="testimonial-card" aria-label="Testimonial from Jonathan Teo">
+            <article class="testimonial-card" aria-label="Testimonial from Robert Tan">
               <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
                 <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
               <blockquote class="testimonial-card__quote">
-                &ldquo;We celebrated our anniversary here and it exceeded every expectation. The soufflé was a revelation — and the service was impeccable without ever being intrusive.&rdquo;
+                &ldquo;We hosted our company&rsquo;s golden jubilee in the Imperial Private Room. The live garoupa arrived at the table still trembling — a moment of absolute culinary theatre I shall never forget.&rdquo;
               </blockquote>
               <footer class="testimonial-card__footer">
-                <p class="testimonial-card__name">&mdash; Jonathan Teo</p>
+                <p class="testimonial-card__name">&mdash; Robert Tan, CEO</p>
               </footer>
             </article>
 
@@ -297,7 +396,7 @@
                 <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
               <blockquote class="testimonial-card__quote">
-                &ldquo;From the moment we walked through the door, we felt transported to Paris. The bouillabaisse was deeply flavoured, and the wine list extraordinarily curated.&rdquo;
+                &ldquo;From the moment the aged pu-erh tea ceremony began, we were transported from Singapore to the imperial courts of the Qing dynasty. The Crab Roe Xiaolongbao was simply transcendent.&rdquo;
               </blockquote>
               <footer class="testimonial-card__footer">
                 <p class="testimonial-card__name">&mdash; Priya Ramaswamy</p>
@@ -324,12 +423,13 @@
 
         <div class="section-header fade-in">
           <p class="section-eyebrow">Join Us</p>
-          <h2 id="reservations-heading" class="section-title">Reserve a Table</h2>
-          <div class="section-divider" aria-hidden="true"></div>
-          <p class="section-intro">We look forward to welcoming you. For parties larger than 8, please call us directly.</p>
+          <h2 id="reservations-heading" class="section-title">預訂席位</h2>
+          <p class="section-title-sub">Reserve Your Table</p>
+          <div class="section-divider" aria-hidden="true"><span>❀</span></div>
+          <p class="section-intro">We look forward to welcoming you to Long Ting. For private dining rooms or parties of more than 8, please contact us directly.</p>
         </div>
 
-        <form id="reservation-form" class="reservation-form fade-in" novalidate aria-label="Table reservation enquiry form">
+        <form id="reservation-form" class="reservation-form fade-in" novalidate aria-label="Table reservation form">
 
           <div class="form-row">
             <div class="form-group">
@@ -390,7 +490,7 @@
                 <option value="5">5 Guests</option>
                 <option value="6">6 Guests</option>
                 <option value="7">7 Guests</option>
-                <option value="8">8+ Guests (please call us)</option>
+                <option value="8">8+ Guests (private dining available)</option>
               </select>
               <span class="form-error" id="guests-error" role="alert" aria-live="polite"></span>
             </div>
@@ -414,6 +514,12 @@
               <label for="time">Preferred Time <span class="required-star" aria-hidden="true">*</span></label>
               <select id="time" name="time" required aria-required="true" aria-describedby="time-error">
                 <option value="">Select time</option>
+                <optgroup label="Yum Cha (Weekends)">
+                  <option value="10:00">10:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
+                </optgroup>
                 <optgroup label="Lunch Service">
                   <option value="12:00">12:00 PM</option>
                   <option value="12:30">12:30 PM</option>
@@ -429,6 +535,7 @@
                   <option value="20:00">8:00 PM</option>
                   <option value="20:30">8:30 PM</option>
                   <option value="21:00">9:00 PM</option>
+                  <option value="21:30">9:30 PM</option>
                 </optgroup>
               </select>
               <span class="form-error" id="time-error" role="alert" aria-live="polite"></span>
@@ -441,22 +548,21 @@
               id="special-requests"
               name="special-requests"
               rows="4"
-              placeholder="Dietary requirements, allergies, celebrations, seating preferences…"
+              placeholder="Dietary requirements, allergies, celebratory occasions, private dining enquiries…"
               aria-describedby="special-requests-hint"
             ></textarea>
-            <span class="form-hint" id="special-requests-hint">Optional — we will do our utmost to accommodate your needs.</span>
+            <span class="form-hint" id="special-requests-hint">Optional — our team will attend to every detail of your experience.</span>
           </div>
 
           <button type="submit" class="btn btn--primary btn--full">Confirm Reservation</button>
 
         </form>
 
-        <!-- Success panel — hidden until valid form submission -->
         <div id="form-success" class="form-success" role="alert" aria-live="polite" hidden>
-          <div class="form-success__icon" aria-hidden="true">&#10022;</div>
+          <div class="form-success__icon" aria-hidden="true">龍</div>
           <h3 class="form-success__title">Reservation Received</h3>
           <p class="form-success__message" id="success-message"></p>
-          <p class="form-success__sub">A confirmation will be sent to your email address. We look forward to welcoming you to Maison Lumière.</p>
+          <p class="form-success__sub">A confirmation will be sent to your email address. We look forward to welcoming you to Long Ting 龍廷.</p>
         </div>
 
       </div>
@@ -472,26 +578,30 @@
       <div class="footer-grid">
 
         <div class="footer-col footer-col--brand">
-          <p class="footer-logo">Maison Lumi&egrave;re</p>
-          <p class="footer-tagline">Fine French Cuisine &middot; Singapore</p>
-          <p class="footer-brand-desc">A sanctuary of refined taste, where every detail speaks of care and every meal becomes a memory.</p>
+          <p class="footer-logo">
+            <span class="footer-logo-zh">龍廷</span>
+            <span class="footer-logo-en">Long Ting</span>
+          </p>
+          <p class="footer-tagline">Imperial Chinese Fine Dining &middot; Singapore</p>
+          <p class="footer-brand-desc">A sanctuary of imperial grace, where century-old culinary heritage is reimagined for those who seek the extraordinary.</p>
         </div>
 
         <div class="footer-col">
           <h4 class="footer-heading">Find Us</h4>
           <address>
-            <p>12 Bukit Pasoh Road</p>
-            <p>Singapore 089834</p>
-            <p><a href="tel:+6562218888">+65 6221 8888</a></p>
-            <p><a href="mailto:reservations@maisonlumiere.sg">reservations@maisonlumiere.sg</a></p>
+            <p>1 Fullerton Road, #02-01</p>
+            <p>Singapore 049213</p>
+            <p><a href="tel:+6566888228">+65 6688 8228</a></p>
+            <p><a href="mailto:reservations@longtingsg.com">reservations@longtingsg.com</a></p>
           </address>
         </div>
 
         <div class="footer-col">
           <h4 class="footer-heading">Hours</h4>
           <dl class="hours-list">
-            <div class="hours-row"><dt>Lunch</dt><dd>Tue &ndash; Sun, 12:00 &ndash; 14:30</dd></div>
-            <div class="hours-row"><dt>Dinner</dt><dd>Tue &ndash; Sun, 18:00 &ndash; 22:00</dd></div>
+            <div class="hours-row"><dt>Yum Cha</dt><dd>Sat &ndash; Sun, 10:00 &ndash; 14:30</dd></div>
+            <div class="hours-row"><dt>Lunch</dt><dd>Tue &ndash; Fri, 11:30 &ndash; 14:30</dd></div>
+            <div class="hours-row"><dt>Dinner</dt><dd>Tue &ndash; Sun, 18:00 &ndash; 22:30</dd></div>
             <div class="hours-row"><dt>Monday</dt><dd>Closed</dd></div>
           </dl>
         </div>
@@ -499,15 +609,18 @@
         <div class="footer-col">
           <h4 class="footer-heading">Follow</h4>
           <ul class="social-links" role="list">
-            <li><a href="#" aria-label="Maison Lumière on Instagram">Instagram</a></li>
-            <li><a href="#" aria-label="Maison Lumière on Facebook">Facebook</a></li>
-            <li><a href="#" aria-label="Maison Lumière on TripAdvisor">TripAdvisor</a></li>
+            <li><a href="#" aria-label="Long Ting on Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Long Ting on WeChat">WeChat</a></li>
+            <li><a href="#" aria-label="Long Ting on Facebook">Facebook</a></li>
           </ul>
         </div>
 
       </div>
 
-      <p class="footer-copy">&copy; 2026 Maison Lumi&egrave;re. All rights reserved.</p>
+      <div class="footer-bottom">
+        <p class="footer-ornament" aria-hidden="true">❀ 龍廷 ❀</p>
+        <p class="footer-copy">&copy; 2026 龍廷 Long Ting. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
