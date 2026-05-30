@@ -783,26 +783,60 @@
   </a>
 
   <!-- ======================================================
-       WHATSAPP FLOATING BUTTON
+       CHATBOT FLOATING PANEL
   ====================================================== -->
-  <div class="wa-float" id="wa-float" role="complementary" aria-label="WhatsApp chat">
-    <a
-      class="wa-float__btn"
-      href="https://wa.me/6598457877?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation%20at%20Miyabi-tei."
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open WhatsApp chat"
-      title="Chat with us on WhatsApp"
-    >
-      <svg class="wa-float__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="16" cy="16" r="16" fill="#25D366"/>
-        <path d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5C10.9 5.5 6.4 10 6.4 15.5C6.4 17.3 6.9 19.1 7.8 20.6L6.3 26L11.8 24.5C13.3 25.3 14.8 25.7 16.4 25.7C21.9 25.7 26.4 21.2 26.4 15.7C26.4 13 25.4 10.4 23.5 8.5ZM16.4 23.9C14.9 23.9 13.5 23.5 12.2 22.8L11.9 22.6L8.7 23.5L9.6 20.4L9.4 20C8.6 18.7 8.2 17.1 8.2 15.5C8.2 11 11.9 7.3 16.4 7.3C18.6 7.3 20.6 8.2 22.1 9.7C23.6 11.2 24.5 13.2 24.5 15.4C24.6 20 20.9 23.9 16.4 23.9ZM20.9 17.6C20.6 17.5 19.2 16.8 19 16.7C18.8 16.6 18.6 16.6 18.5 16.9C18.3 17.2 17.8 17.8 17.7 18C17.5 18.2 17.4 18.2 17.1 18.1C16.8 18 15.9 17.7 14.8 16.7C14 16 13.4 15.1 13.3 14.8C13.1 14.5 13.3 14.4 13.4 14.2C13.5 14.1 13.7 13.9 13.8 13.7C13.9 13.5 14 13.4 14.1 13.2C14.2 13 14.1 12.8 14.1 12.7C14 12.6 13.4 11.2 13.2 10.6C13 10.1 12.8 10.1 12.6 10.1H12.2C12 10.1 11.7 10.2 11.5 10.4C11.3 10.7 10.6 11.3 10.6 12.7C10.6 14.1 11.5 15.5 11.6 15.7C11.8 15.9 13.4 18.4 15.9 19.6C17.5 20.3 18.1 20.3 18.9 20.2C19.4 20.1 20.5 19.5 20.7 18.9C21 18.2 21 17.7 20.9 17.6C20.9 17.6 20.9 17.6 20.9 17.6Z" fill="white"/>
+  <div class="chat-float" id="chat-float" role="complementary" aria-label="Miyabi-tei chatbot">
+
+    <button class="chat-float__btn" id="chat-toggle"
+      aria-label="Open chat assistant"
+      aria-expanded="false"
+      aria-controls="chat-panel">
+      <!-- Chat bubble icon (shown when closed) -->
+      <svg class="chat-float__icon chat-float__icon--open" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor"/>
+        <circle cx="8"  cy="11" r="1.1" fill="white" opacity="0.85"/>
+        <circle cx="12" cy="11" r="1.1" fill="white" opacity="0.85"/>
+        <circle cx="16" cy="11" r="1.1" fill="white" opacity="0.85"/>
       </svg>
-      <span class="wa-float__pulse" aria-hidden="true"></span>
-    </a>
-    <div class="wa-float__tooltip" id="wa-tooltip" role="tooltip">
-      Chat with us on WhatsApp
-      <button class="wa-float__tooltip-close" id="wa-tooltip-close" aria-label="Dismiss">×</button>
+      <!-- Close × icon (shown when open) -->
+      <svg class="chat-float__icon chat-float__icon--close" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="chat-float__pulse" aria-hidden="true"></span>
+    </button>
+
+    <div class="chat-panel" id="chat-panel"
+      role="dialog" aria-modal="false"
+      aria-label="Miyabi-tei chat assistant" hidden>
+
+      <div class="chat-panel__header">
+        <div class="chat-panel__header-avatar" aria-hidden="true">雅</div>
+        <div class="chat-panel__header-info">
+          <p class="chat-panel__header-name">雅庭 Miyabi-tei</p>
+          <p class="chat-panel__header-status">Ask us anything</p>
+        </div>
+      </div>
+
+      <div class="chat-panel__messages" id="chat-messages"
+        aria-live="polite" aria-relevant="additions"></div>
+
+      <form class="chat-panel__input-row" id="chat-form" novalidate>
+        <input
+          type="text"
+          id="chat-input"
+          class="chat-panel__input"
+          placeholder="Menu, hours, reservations…"
+          autocomplete="off"
+          aria-label="Your question"
+          maxlength="200"
+        />
+        <button type="submit" class="chat-panel__send" aria-label="Send message">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+
     </div>
   </div>
 </body>

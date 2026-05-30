@@ -563,12 +563,282 @@
   /* -----------------------------------------------------------
      INIT — wire everything up after DOM is ready
   ----------------------------------------------------------- */
+  /* -----------------------------------------------------------
+     FAQ CHATBOT — keyword-matched answers from FAQ.md data
+  ----------------------------------------------------------- */
+  var FAQ_DATA = [
+    {
+      q: 'What is Miyabi-tei restaurant about',
+      a: '雅庭 Miyabi-tei (meaning "elegant garden") is a Japanese fine dining restaurant in Singapore, established in 1994. We offer an <em>omakase</em> experience guided by the philosophy of <em>shun</em> — the peak of seasonal perfection.',
+      tags: ['about', 'miyabi', 'restaurant', 'japanese', 'cuisine', 'what', 'established', '1994']
+    },
+    {
+      q: 'Where is Miyabi-tei located address find',
+      a: 'We are at <strong>8 Dempsey Road, #01-02, Singapore 249687</strong> in the Dempsey Hill enclave.',
+      tags: ['address', 'location', 'where', 'find', 'dempsey', 'map', 'directions', 'area']
+    },
+    {
+      q: 'Opening hours when open close schedule',
+      a: 'We are open <strong>Tuesday – Saturday</strong>:<br>• Lunch: 12:00 – 14:30<br>• Dinner: 18:30 – 22:00<br><strong>Closed on Sundays and Mondays.</strong>',
+      tags: ['hours', 'open', 'close', 'time', 'schedule', 'tuesday', 'saturday', 'sunday', 'monday', 'when', 'day']
+    },
+    {
+      q: 'Are you open on weekend Saturday Sunday',
+      a: 'We are open on <strong>Saturdays</strong> for both lunch and dinner. We are <strong>closed on Sundays and Mondays</strong>.',
+      tags: ['weekend', 'saturday', 'sunday', 'open', 'close']
+    },
+    {
+      q: 'Phone number contact call email',
+      a: 'Reach us by phone at <strong>+65 6474 8228</strong> or email <a href="mailto:reservations@miyabitei.sg">reservations@miyabitei.sg</a>.',
+      tags: ['phone', 'call', 'number', 'contact', 'reach', 'email', 'telephone']
+    },
+    {
+      q: 'WhatsApp contact chat message',
+      a: 'Yes — chat with us on WhatsApp at <strong>+65 9845 7877</strong>.',
+      tags: ['whatsapp', 'chat', 'message', 'wa', 'text']
+    },
+    {
+      q: 'How to make a reservation book a table',
+      a: 'Use the <a href="#reservations">Reservation form</a> on this page, call <strong>+65 6474 8228</strong>, or email <strong>reservations@miyabitei.sg</strong>. You\'ll need your name, email, phone, preferred date, time, and guest count.',
+      tags: ['reservation', 'book', 'table', 'reserve', 'booking', 'how', 'make']
+    },
+    {
+      q: 'Available dining times lunch dinner slots',
+      a: '<strong>Lunch Omakase:</strong> 12:00, 12:30, 1:00, 1:30 PM<br><strong>Dinner Omakase:</strong> 6:00, 6:30, 7:00, 7:30, 8:00, 8:30, 9:00 PM',
+      tags: ['time', 'slot', 'available', 'lunch', 'dinner', 'omakase', 'session', 'sitting']
+    },
+    {
+      q: 'Large group private dining event corporate',
+      a: 'For <strong>8 or more guests</strong> we offer private dining rooms. Contact us at <strong>+65 6474 8228</strong> or <strong>reservations@miyabitei.sg</strong> to arrange.',
+      tags: ['group', 'private', 'large', 'party', 'event', 'corporate', 'eight', 'room', 'function']
+    },
+    {
+      q: 'Dietary requirements allergies special requests vegan vegetarian halal',
+      a: 'Note dietary requirements and allergies in the <strong>Special Requests</strong> field when booking. For complex needs, email <strong>reservations@miyabitei.sg</strong> so we can plan your experience in advance.',
+      tags: ['diet', 'allerg', 'vegetarian', 'vegan', 'halal', 'gluten', 'special', 'request', 'intolerance', 'kosher']
+    },
+    {
+      q: 'What is omakase chef course tasting menu',
+      a: '<em>Omakase</em> (おまかせ) means "I leave it up to you." Our <em>itamae</em> (master chef) composes a seasonal multi-course journey using the day\'s finest ingredients.',
+      tags: ['omakase', 'chef', 'course', 'tasting', 'what', 'itamae', 'multi']
+    },
+    {
+      q: 'Starters menu chawanmushi sashimi salmon moriawase',
+      a: '<strong>Starters (前菜):</strong><br>• Chilled Chawanmushi — <strong>S$28</strong> (dashi egg custard, Hokkaido uni, yuzu)<br>• Sashimi Moriawase — <strong>S$68</strong> (7 seasonal cuts, Kishu cedar, Shizuoka wasabi)<br>• Sake Saikyo-yaki — <strong>S$42</strong> (Hokkaido salmon, Kyoto white miso, binchōtan)',
+      tags: ['starter', 'chawanmushi', 'sashimi', 'salmon', 'sake', 'saikyo', 'moriawase', 'uni', 'appetizer', 'first']
+    },
+    {
+      q: 'Nigiri sushi tuna otoro uni sea urchin nodoguro',
+      a: '<strong>Nigiri Signatures (握り):</strong><br>• Otoro Nigiri — <strong>S$58</strong> for 2 pcs (fatty bluefin tuna, Ōma Aomori)<br>• Bafun Uni — <strong>S$72</strong> for 2 pcs (Rishiri Island sea urchin)<br>• Nodoguro Aburi — <strong>S$54</strong> for 2 pcs (flame-seared blackthroat sea perch)',
+      tags: ['nigiri', 'sushi', 'tuna', 'otoro', 'uni', 'sea urchin', 'nodoguro', 'aburi', 'bluefin', 'bafun']
+    },
+    {
+      q: 'Main course wagyu beef hamo shabu fillet',
+      a: '<strong>Main Courses (主菜):</strong><br>• Wagyu Shabu-shabu — <strong>S$148</strong> (A5 Kagoshima Kuroge Wagyu, kombu dashi)<br>• Hamo Aburi-yaki — <strong>S$88</strong> (Kyoto pike conger, umeboshi, ponzu)<br>• Kuroge Wagyu Fillet — <strong>S$198</strong> (A5 Miyazaki tenderloin, binchōtan, dashi butter)',
+      tags: ['main', 'wagyu', 'beef', 'hamo', 'shabu', 'fillet', 'kuroge', 'a5', 'pike', 'conger', 'steak']
+    },
+    {
+      q: 'Dessert matcha mochi sakura warabi sweet',
+      a: '<strong>Desserts (甘味):</strong><br>• Matcha Parfait — <strong>S$22</strong> (Uji matcha ice cream, azuki, houjicha granola, kuromitsu)<br>• Sakura Mochi — <strong>S$18</strong> (pink rice parcels, koshi-an red bean)<br>• Kuromitsu Warabi-mochi — <strong>S$16</strong> (bracken jelly, kinako, Okinawan black sugar)',
+      tags: ['dessert', 'matcha', 'parfait', 'mochi', 'sakura', 'warabi', 'sweet', 'kuromitsu', 'ice cream', 'azuki']
+    },
+    {
+      q: 'Price cost how much expensive menu SGD',
+      a: 'All prices in SGD — a quick overview:<br>Starters: S$28–S$68 · Nigiri: S$54–S$72 · Mains: S$88–S$198 · Desserts: S$16–S$22.<br>Call <strong>+65 6474 8228</strong> or see the full menu above for details.',
+      tags: ['price', 'cost', 'how much', 'sgd', 'dollar', 'expensive', 'cheap', 'afford', 'rate', 'fee']
+    },
+    {
+      q: 'Where source ingredients Tsukiji Kyoto Hokkaido fresh',
+      a: 'Ingredients are sourced daily from <strong>Tsukiji market (Tokyo)</strong> and <strong>Kyoto\'s finest producers</strong> — including Rishiri Island Hokkaido uni, Ōma Aomori bluefin tuna, Kagoshima/Miyazaki A5 Wagyu, Nishiki Kyoto white miso, and Shizuoka wasabi.',
+      tags: ['source', 'ingredient', 'tsukiji', 'kyoto', 'hokkaido', 'japan', 'fresh', 'produce', 'quality', 'import']
+    },
+    {
+      q: 'Reservation confirmation email receipt',
+      a: 'Yes — after submitting your reservation a <strong>confirmation email</strong> will be sent to you, and our team will follow up to confirm your booking details.',
+      tags: ['confirm', 'confirmation', 'email', 'receipt', 'acknowledgement', 'notif']
+    },
+    {
+      q: 'Enquiry response time reply how long',
+      a: 'Our team responds to all enquiries within <strong>one business day</strong>.',
+      tags: ['response', 'reply', 'enquiry', 'contact', 'long', 'wait', 'business', 'day', 'time']
+    },
+    {
+      q: 'What is shun seasonal philosophy',
+      a: '<em>Shun</em> (旬) is the Japanese concept of seasonal perfection — the precise moment when an ingredient is at its peak in flavour and freshness. Every dish at Miyabi-tei honours <em>shun</em>, which is why the menu evolves with the seasons.',
+      tags: ['shun', 'seasonal', 'season', 'philosophy', 'ingredient', 'philosophy', 'concept', 'japanese']
+    },
+    {
+      q: 'What is omotenashi hospitality',
+      a: '<em>Omotenashi</em> (おもてなし) is Japanese wholehearted hospitality — anticipating the guest\'s needs before they are expressed. It is the spirit behind every detail of the Miyabi-tei experience.',
+      tags: ['omotenashi', 'hospitality', 'service', 'japanese', 'philosophy', 'concept']
+    }
+  ];
+
+  function initChatbot() {
+    var toggleBtn = document.getElementById('chat-toggle');
+    var panel     = document.getElementById('chat-panel');
+    var messages  = document.getElementById('chat-messages');
+    var form      = document.getElementById('chat-form');
+    var input     = document.getElementById('chat-input');
+
+    if (!toggleBtn || !panel || !messages || !form || !input) return;
+
+    var isOpen = false;
+
+    var STOP = new Set([
+      'a','an','the','is','are','was','were','do','does','did','i','me','my',
+      'you','your','it','its','this','that','what','where','when','how','can',
+      'could','would','should','will','have','has','had','be','been','to','of',
+      'in','for','on','with','at','by','from','about','and','or','but','not',
+      'any','some','all','which','who','there','they','we','us','our',
+      'please','tell','know','get','give','want','need','make','see','let'
+    ]);
+
+    /* ---- panel open / close -------------------------------- */
+    function openPanel() {
+      isOpen = true;
+      panel.hidden = false;
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.classList.add('is-open');
+      if (messages.children.length === 0) {
+        addBotMessage(
+          'Irasshaimase! &#x6211; am the Miyabi-tei assistant. ' +
+          'Ask me about our <strong>menu</strong>, <strong>opening hours</strong>, ' +
+          '<strong>reservations</strong>, or anything else. &#x2747;'
+        );
+      }
+      setTimeout(function () { input.focus(); }, 120);
+    }
+
+    function closePanel() {
+      isOpen = false;
+      panel.hidden = true;
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.classList.remove('is-open');
+      toggleBtn.focus();
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      if (isOpen) { closePanel(); } else { openPanel(); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen) { closePanel(); }
+    });
+
+    /* ---- message rendering --------------------------------- */
+    function addBotMessage(html) {
+      var el = document.createElement('div');
+      el.className = 'chat-msg chat-msg--bot';
+      el.innerHTML =
+        '<span class="chat-msg__avatar" aria-hidden="true">&#x96C5;</span>' +
+        '<div class="chat-msg__bubble">' + html + '</div>';
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addUserMessage(text) {
+      var el = document.createElement('div');
+      el.className = 'chat-msg chat-msg--user';
+      el.innerHTML = '<div class="chat-msg__bubble">' + escapeHtml(text) + '</div>';
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addTypingIndicator() {
+      var el = document.createElement('div');
+      el.className = 'chat-msg chat-msg--bot chat-msg--typing';
+      el.id = 'chat-typing';
+      el.innerHTML =
+        '<span class="chat-msg__avatar" aria-hidden="true">&#x96C5;</span>' +
+        '<div class="chat-msg__bubble">' +
+          '<span class="typing-dot"></span>' +
+          '<span class="typing-dot"></span>' +
+          '<span class="typing-dot"></span>' +
+        '</div>';
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+      return el;
+    }
+
+    function removeTypingIndicator() {
+      var el = document.getElementById('chat-typing');
+      if (el) { el.parentNode.removeChild(el); }
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    /* ---- FAQ matching -------------------------------------- */
+    function tokenize(text) {
+      return text.toLowerCase()
+        .replace(/[^\w\s]/g, ' ')
+        .split(/\s+/)
+        .filter(function (t) { return t.length > 2 && !STOP.has(t); });
+    }
+
+    function findAnswer(query) {
+      var tokens = tokenize(query);
+      if (tokens.length === 0) { return null; }
+
+      var best = null;
+      var bestScore = 0;
+
+      FAQ_DATA.forEach(function (entry) {
+        var qLow    = entry.q.toLowerCase();
+        var aLow    = entry.a.toLowerCase().replace(/<[^>]+>/g, ' ');
+        var tagsStr = entry.tags.join(' ');
+        var score   = 0;
+
+        tokens.forEach(function (kw) {
+          if (tagsStr.includes(kw)) { score += 4; }
+          if (qLow.includes(kw))   { score += 3; }
+          if (aLow.includes(kw))   { score += 1; }
+        });
+
+        if (score > bestScore) { bestScore = score; best = entry; }
+      });
+
+      return bestScore >= 3 ? best.a : null;
+    }
+
+    /* ---- form submit --------------------------------------- */
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var text = input.value.trim();
+      if (!text) return;
+
+      addUserMessage(text);
+      input.value = '';
+      addTypingIndicator();
+
+      setTimeout(function () {
+        removeTypingIndicator();
+        var answer = findAnswer(text);
+        addBotMessage(answer ||
+          'I\'m not certain about that — please call us at <strong>+65 6474 8228</strong> ' +
+          'or email <a href="mailto:reservations@miyabitei.sg">reservations@miyabitei.sg</a> ' +
+          'and our team will be delighted to assist.'
+        );
+      }, 750);
+    });
+  }
+
+  /* -----------------------------------------------------------
+     INIT — wire everything up after DOM is ready
+  ----------------------------------------------------------- */
   function init() {
     initMobileNav();
     initScrollAnimations();
     initCarousel();
     initForm();
     initContactForm();
+    initChatbot();
   }
 
   if (document.readyState === 'loading') {
@@ -576,31 +846,5 @@
   } else {
     init();
   }
-
-  /* ── WhatsApp tooltip dismiss ─────────────────────────────── */
-  (function () {
-    var tooltip     = document.getElementById('wa-tooltip');
-    var closeBtn    = document.getElementById('wa-tooltip-close');
-    var STORAGE_KEY = 'miyabi-wa-tooltip-dismissed';
-
-    if (!tooltip || !closeBtn) return;
-
-    try {
-      if (localStorage.getItem(STORAGE_KEY) === '1') {
-        tooltip.classList.add('is-hidden');
-      }
-    } catch (e) {}
-
-    closeBtn.addEventListener('click', function () {
-      tooltip.classList.add('is-hidden');
-      try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-    });
-
-    setTimeout(function () {
-      if (!tooltip.classList.contains('is-hidden')) {
-        tooltip.classList.add('is-hidden');
-      }
-    }, 8000);
-  }());
 
 })();
