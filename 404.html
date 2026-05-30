@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="3; url=./index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — Maison Lumière</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .not-found {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      background-color: var(--color-bg, #faf9f7);
+    }
+    .not-found__code {
+      font-family: var(--font-serif, 'Cormorant Garamond', serif);
+      font-size: clamp(5rem, 20vw, 10rem);
+      font-weight: 300;
+      color: var(--color-gold, #c9a96e);
+      opacity: .25;
+      line-height: 1;
+      margin: 0;
+    }
+    .not-found__heading {
+      font-family: var(--font-serif, 'Cormorant Garamond', serif);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 400;
+      letter-spacing: .08em;
+      margin: 0;
+      color: var(--color-text, #1a1a1a);
+    }
+    .not-found__sub {
+      font-family: var(--font-sans, 'Montserrat', sans-serif);
+      font-size: .85rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted, #666);
+      margin: 0;
+    }
+    .not-found__sub a {
+      color: var(--color-gold, #c9a96e);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .not-found__divider {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold, #c9a96e);
+      opacity: .5;
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <p class="not-found__code" aria-hidden="true">404</p>
+    <div class="not-found__divider"></div>
+    <h1 class="not-found__heading">Page Not Found</h1>
+    <p class="not-found__sub">
+      Redirecting you to <a href="./index.html">Maison Lumière</a> in 3 seconds…
+    </p>
+  </main>
+  <script>
+    setTimeout(() => { window.location.replace('./index.html'); }, 3000);
+  </script>
+</body>
+</html>
