@@ -361,7 +361,7 @@
 
       successMsg.textContent =
         'Thank you, ' + firstName + '. Your table for ' + guests + ' ' +
-        guestWord + ' on ' + dateStr + ' at ' + timeStr + ' at Long Ting has been received.';
+        guestWord + ' on ' + dateStr + ' at ' + timeStr + ' at Miyabi-tei has been received.';
 
       /* Hide form, reveal success panel */
       form.hidden        = true;
