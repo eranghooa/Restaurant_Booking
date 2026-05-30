@@ -482,6 +482,9 @@
       contactSuccess.hidden = false;
       contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
+      /* Fire hook — triggers voice announcement and any other registered handlers */
+      formHooks.fire('contact:submit:success', { name: name, email: email });
+
       contactForm.reset();
       contactForm.querySelectorAll('.is-invalid').forEach(function (el) {
         el.classList.remove('is-invalid');
@@ -491,6 +494,71 @@
       });
     });
   }
+
+  /* -----------------------------------------------------------
+     FORM HOOKS — lightweight pub/sub for post-submission events
+  ----------------------------------------------------------- */
+  var formHooks = (function () {
+    var _listeners = {};
+
+    function on(event, fn) {
+      if (!_listeners[event]) { _listeners[event] = []; }
+      _listeners[event].push(fn);
+    }
+
+    function fire(event, data) {
+      (_listeners[event] || []).forEach(function (fn) {
+        try { fn(data); } catch (err) { /* swallow handler errors */ }
+      });
+    }
+
+    return { on: on, fire: fire };
+  }());
+
+  /* -----------------------------------------------------------
+     VOICE FEEDBACK — Web Speech API announcement on submission
+  ----------------------------------------------------------- */
+  function speakMessage(text) {
+    if (!window.speechSynthesis) { return; }
+
+    window.speechSynthesis.cancel();
+
+    function buildAndSpeak() {
+      var utterance    = new SpeechSynthesisUtterance(text);
+      utterance.lang   = 'en-US';
+      utterance.rate   = 0.95;
+      utterance.pitch  = 1.1;
+      utterance.volume = 1;
+
+      var voices    = window.speechSynthesis.getVoices();
+      var preferred = voices.find(function (v) {
+        return v.lang === 'en-US' && v.localService;
+      }) || voices.find(function (v) {
+        return v.lang.startsWith('en');
+      });
+      if (preferred) { utterance.voice = preferred; }
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    /* Voices may not be loaded yet on first call — wait for the event */
+    var voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      buildAndSpeak();
+    } else {
+      window.speechSynthesis.addEventListener('voiceschanged', function handler() {
+        window.speechSynthesis.removeEventListener('voiceschanged', handler);
+        buildAndSpeak();
+      });
+    }
+  }
+
+  /* Register the voice hook for enquiry form success */
+  formHooks.on('contact:submit:success', function () {
+    speakMessage(
+      'Hurray! Thank you for your submission. We will get back to you in one business day.'
+    );
+  });
 
   /* -----------------------------------------------------------
      INIT — wire everything up after DOM is ready
