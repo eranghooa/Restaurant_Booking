@@ -380,6 +380,119 @@
   }
 
   /* -----------------------------------------------------------
+     LEAD MANAGEMENT — Contact Us form + localStorage storage
+  ----------------------------------------------------------- */
+  var LEADS_KEY = 'miyabitei_leads';
+
+  var contactValidators = {
+    'contact-name': {
+      validate: function (v) { return v.trim().length >= 2; },
+      message: 'Please enter your full name (at least 2 characters).'
+    },
+    'contact-email': {
+      validate: function (v) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+      },
+      message: 'Please enter a valid email address.'
+    },
+    'contact-inquiry': {
+      validate: function (v) { return v !== ''; },
+      message: 'Please select an enquiry type.'
+    },
+    'contact-message': {
+      validate: function (v) { return v.trim().length >= 10; },
+      message: 'Please enter a message (at least 10 characters).'
+    }
+  };
+
+  function validateContactField(name) {
+    var input   = document.getElementById(name);
+    var errorEl = document.getElementById(name + '-error');
+    var rule    = contactValidators[name];
+    if (!rule || !input) return true;
+    var isValid = rule.validate(input.value);
+    input.classList.toggle('is-invalid', !isValid);
+    if (errorEl) { errorEl.textContent = isValid ? '' : rule.message; }
+    return isValid;
+  }
+
+  function saveLeadToStorage(lead) {
+    try {
+      var leads = JSON.parse(localStorage.getItem(LEADS_KEY) || '[]');
+      leads.push(lead);
+      localStorage.setItem(LEADS_KEY, JSON.stringify(leads));
+    } catch (_) { /* storage unavailable — silently skip */ }
+  }
+
+  function initContactForm() {
+    var contactForm    = document.getElementById('contact-form');
+    var contactSuccess = document.getElementById('contact-success');
+    var contactMsg     = document.getElementById('contact-success-message');
+    if (!contactForm || !contactSuccess || !contactMsg) return;
+
+    Object.keys(contactValidators).forEach(function (name) {
+      var el = document.getElementById(name);
+      if (!el) return;
+      el.addEventListener('blur', function () { validateContactField(name); });
+      el.addEventListener('input', function () {
+        if (el.classList.contains('is-invalid')) { validateContactField(name); }
+      });
+    });
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var requiredFields = ['contact-name', 'contact-email', 'contact-inquiry', 'contact-message'];
+      var formIsValid    = true;
+
+      requiredFields.forEach(function (name) {
+        if (!validateContactField(name)) { formIsValid = false; }
+      });
+
+      if (!formIsValid) {
+        var firstInvalid = contactForm.querySelector('.is-invalid');
+        if (firstInvalid) {
+          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstInvalid.focus();
+        }
+        return;
+      }
+
+      var name    = document.getElementById('contact-name').value.trim();
+      var email   = document.getElementById('contact-email').value.trim();
+      var phone   = (document.getElementById('contact-phone').value || '').trim();
+      var inquiry = document.getElementById('contact-inquiry').value;
+      var message = document.getElementById('contact-message').value.trim();
+
+      saveLeadToStorage({
+        id:          String(Date.now()),
+        name:        name,
+        email:       email,
+        phone:       phone,
+        inquiry:     inquiry,
+        message:     message,
+        submittedAt: new Date().toISOString()
+      });
+
+      contactMsg.textContent =
+        'Thank you, ' + name.split(' ')[0] + '. Your enquiry has been received and ' +
+        'our team will be in touch within one business day.';
+
+      contactForm.hidden    = true;
+      contactSuccess.hidden = false;
+      contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      contactForm.reset();
+      contactForm.querySelectorAll('.is-invalid').forEach(function (el) {
+        el.classList.remove('is-invalid');
+      });
+      contactForm.querySelectorAll('.form-error').forEach(function (el) {
+        el.textContent = '';
+      });
+    });
+  }
+
+  /* -----------------------------------------------------------
      INIT — wire everything up after DOM is ready
   ----------------------------------------------------------- */
   function init() {
@@ -387,6 +500,7 @@
     initScrollAnimations();
     initCarousel();
     initForm();
+    initContactForm();
   }
 
   if (document.readyState === 'loading') {
@@ -394,5 +508,31 @@
   } else {
     init();
   }
+
+  /* ── WhatsApp tooltip dismiss ─────────────────────────────── */
+  (function () {
+    var tooltip     = document.getElementById('wa-tooltip');
+    var closeBtn    = document.getElementById('wa-tooltip-close');
+    var STORAGE_KEY = 'miyabi-wa-tooltip-dismissed';
+
+    if (!tooltip || !closeBtn) return;
+
+    try {
+      if (localStorage.getItem(STORAGE_KEY) === '1') {
+        tooltip.classList.add('is-hidden');
+      }
+    } catch (e) {}
+
+    closeBtn.addEventListener('click', function () {
+      tooltip.classList.add('is-hidden');
+      try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    });
+
+    setTimeout(function () {
+      if (!tooltip.classList.contains('is-hidden')) {
+        tooltip.classList.add('is-hidden');
+      }
+    }, 8000);
+  }());
 
 })();

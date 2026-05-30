@@ -41,6 +41,7 @@
         <li><a href="#menu">Menu</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#reservations">Reservations</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -563,6 +564,154 @@
       </div>
     </section>
 
+    <!-- ======================================================
+         CONTACT US
+    ====================================================== -->
+    <section id="contact" class="contact section" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <p class="section-eyebrow">Get In Touch</p>
+          <h2 id="contact-heading" class="section-title">お問い合わせ</h2>
+          <p class="section-title-sub">Contact Us</p>
+          <div class="section-divider" aria-hidden="true"><span>❀</span></div>
+          <p class="section-intro">Whether you have a question, a private dining enquiry, or simply wish to reach us — we would be honoured to hear from you.</p>
+        </div>
+
+        <div class="contact-layout fade-in">
+
+          <!-- Lead Capture Form -->
+          <div class="contact-form-wrap">
+            <form id="contact-form" class="contact-form" novalidate aria-label="Contact enquiry form">
+
+              <div class="form-group">
+                <label for="contact-name">Full Name <span class="required-star" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="contact-name"
+                  autocomplete="name"
+                  placeholder="Your full name"
+                  required
+                  aria-required="true"
+                  aria-describedby="contact-name-error"
+                />
+                <span class="form-error" id="contact-name-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email Address <span class="required-star" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="contact-email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                  aria-required="true"
+                  aria-describedby="contact-email-error"
+                />
+                <span class="form-error" id="contact-email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="contact-phone"
+                  autocomplete="tel"
+                  placeholder="+65 9123 4567"
+                  aria-describedby="contact-phone-hint"
+                />
+                <span class="form-hint" id="contact-phone-hint">Optional — for urgent enquiries.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-inquiry">Enquiry Type <span class="required-star" aria-hidden="true">*</span></label>
+                <select
+                  id="contact-inquiry"
+                  name="contact-inquiry"
+                  required
+                  aria-required="true"
+                  aria-describedby="contact-inquiry-error"
+                >
+                  <option value="">Select enquiry type</option>
+                  <option value="general">General Enquiry</option>
+                  <option value="private-dining">Private Dining</option>
+                  <option value="corporate">Corporate Events</option>
+                  <option value="press">Press &amp; Media</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-error" id="contact-inquiry-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group form-group--full">
+                <label for="contact-message">Message <span class="required-star" aria-hidden="true">*</span></label>
+                <textarea
+                  id="contact-message"
+                  name="contact-message"
+                  rows="5"
+                  placeholder="How may we assist you?"
+                  required
+                  aria-required="true"
+                  aria-describedby="contact-message-error"
+                ></textarea>
+                <span class="form-error" id="contact-message-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
+
+            </form>
+
+            <div id="contact-success" class="form-success" role="alert" aria-live="polite" hidden>
+              <div class="form-success__icon" aria-hidden="true">❀</div>
+              <h3 class="form-success__title">Message Received</h3>
+              <p class="form-success__message" id="contact-success-message"></p>
+              <p class="form-success__sub">Our team will respond within one business day. We look forward to welcoming you to 雅庭 Miyabi-tei.</p>
+            </div>
+          </div>
+
+          <!-- Map + Contact Details -->
+          <div class="contact-info">
+            <div class="contact-map">
+              <iframe
+                src="https://maps.google.com/maps?q=8+Dempsey+Road+Singapore+249687&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                title="雅庭 Miyabi-tei location on Google Maps — 8 Dempsey Road, Singapore"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Address</span>
+                <address>8 Dempsey Road, #01-02<br>Singapore 249687</address>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Phone</span>
+                <p><a href="tel:+6564748228">+65 6474 8228</a></p>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Email</span>
+                <p><a href="mailto:reservations@miyabitei.sg">reservations@miyabitei.sg</a></p>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Hours</span>
+                <dl class="hours-list">
+                  <div class="hours-row"><dt>Lunch</dt><dd>Tue &ndash; Sat, 12:00 &ndash; 14:30</dd></div>
+                  <div class="hours-row"><dt>Dinner</dt><dd>Tue &ndash; Sat, 18:30 &ndash; 22:00</dd></div>
+                  <div class="hours-row"><dt>Sun &amp; Mon</dt><dd>Closed</dd></div>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ======================================================
@@ -619,5 +768,42 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Facebook floating button -->
+  <a
+    href="https://www.facebook.com/miyabitei"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fb-float"
+    aria-label="Visit Miyabi-tei on Facebook"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.883v2.271h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+    </svg>
+  </a>
+
+  <!-- ======================================================
+       WHATSAPP FLOATING BUTTON
+  ====================================================== -->
+  <div class="wa-float" id="wa-float" role="complementary" aria-label="WhatsApp chat">
+    <a
+      class="wa-float__btn"
+      href="https://wa.me/6598457877?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation%20at%20Miyabi-tei."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open WhatsApp chat"
+      title="Chat with us on WhatsApp"
+    >
+      <svg class="wa-float__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+        <path d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5C10.9 5.5 6.4 10 6.4 15.5C6.4 17.3 6.9 19.1 7.8 20.6L6.3 26L11.8 24.5C13.3 25.3 14.8 25.7 16.4 25.7C21.9 25.7 26.4 21.2 26.4 15.7C26.4 13 25.4 10.4 23.5 8.5ZM16.4 23.9C14.9 23.9 13.5 23.5 12.2 22.8L11.9 22.6L8.7 23.5L9.6 20.4L9.4 20C8.6 18.7 8.2 17.1 8.2 15.5C8.2 11 11.9 7.3 16.4 7.3C18.6 7.3 20.6 8.2 22.1 9.7C23.6 11.2 24.5 13.2 24.5 15.4C24.6 20 20.9 23.9 16.4 23.9ZM20.9 17.6C20.6 17.5 19.2 16.8 19 16.7C18.8 16.6 18.6 16.6 18.5 16.9C18.3 17.2 17.8 17.8 17.7 18C17.5 18.2 17.4 18.2 17.1 18.1C16.8 18 15.9 17.7 14.8 16.7C14 16 13.4 15.1 13.3 14.8C13.1 14.5 13.3 14.4 13.4 14.2C13.5 14.1 13.7 13.9 13.8 13.7C13.9 13.5 14 13.4 14.1 13.2C14.2 13 14.1 12.8 14.1 12.7C14 12.6 13.4 11.2 13.2 10.6C13 10.1 12.8 10.1 12.6 10.1H12.2C12 10.1 11.7 10.2 11.5 10.4C11.3 10.7 10.6 11.3 10.6 12.7C10.6 14.1 11.5 15.5 11.6 15.7C11.8 15.9 13.4 18.4 15.9 19.6C17.5 20.3 18.1 20.3 18.9 20.2C19.4 20.1 20.5 19.5 20.7 18.9C21 18.2 21 17.7 20.9 17.6C20.9 17.6 20.9 17.6 20.9 17.6Z" fill="white"/>
+      </svg>
+      <span class="wa-float__pulse" aria-hidden="true"></span>
+    </a>
+    <div class="wa-float__tooltip" id="wa-tooltip" role="tooltip">
+      Chat with us on WhatsApp
+      <button class="wa-float__tooltip-close" id="wa-tooltip-close" aria-label="Dismiss">×</button>
+    </div>
+  </div>
 </body>
 </html>
