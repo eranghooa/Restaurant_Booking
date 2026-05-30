@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Maison Lumière — Our story, our team, and the philosophy behind our upscale French dining experience in Singapore." />
+  <title>About Us | Maison Lumière · Fine French Dining · Singapore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── About-page specific styles ── */
+    .about-hero {
+      height: 60vh;
+      min-height: 420px;
+      background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .about-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.45), rgba(10,10,10,0.72));
+    }
+    .about-hero__content {
+      position: relative;
+      z-index: 1;
+      color: var(--color-cream);
+    }
+    .about-hero__content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-cream);
+      margin-bottom: var(--space-sm);
+    }
+    .about-hero__content p {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    /* Story section */
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+    .story__img-wrap {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .story__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .story__img-wrap:hover img { transform: scale(1.04); }
+    .story__text .section-eyebrow { margin-bottom: var(--space-xs); }
+    .story__text .section-title   { margin-bottom: var(--space-md); }
+    .story__text p {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      line-height: 1.9;
+      color: #555;
+      margin-bottom: var(--space-md);
+    }
+    .story__text p:last-child { margin-bottom: 0; }
+
+    /* Values */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .value-card {
+      text-align: center;
+      padding: var(--space-xl) var(--space-lg);
+      background: #fff;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+    }
+    .value-card__icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+    .value-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-sm);
+    }
+    .value-card__desc {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    /* Team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .team-card { text-align: center; }
+    .team-card__img-wrap {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      border-radius: 50%;
+      width: 180px;
+      margin: 0 auto var(--space-md);
+    }
+    .team-card__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .team-card:hover .team-card__img-wrap img { transform: scale(1.06); }
+    .team-card__name {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--color-charcoal);
+      margin-bottom: 4px;
+    }
+    .team-card__role {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+    .team-card__bio {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    /* Awards strip */
+    .awards {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-3xl);
+      flex-wrap: wrap;
+      margin-top: var(--space-2xl);
+    }
+    .award {
+      text-align: center;
+    }
+    .award__year {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 4px;
+    }
+    .award__name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--color-cream);
+    }
+
+    /* CTA banner */
+    .cta-banner {
+      text-align: center;
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--color-cream);
+    }
+    .cta-banner .section-title { margin-bottom: var(--space-md); }
+    .cta-banner p {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .story { grid-template-columns: 1fr; }
+      .story__img-wrap { aspect-ratio: 16/9; }
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .awards { gap: var(--space-xl); }
+    }
+    @media (max-width: 1024px) {
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="index.html" aria-label="Maison Lumière — return to home">
+        Maison Lumière
+      </a>
+
+      <button
+        class="nav__hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#reservations">Reservations</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="about-hero" aria-label="About Maison Lumière">
+      <div class="about-hero__overlay" aria-hidden="true"></div>
+      <div class="about-hero__content">
+        <p>Est. 2008 &middot; Singapore</p>
+        <h1>Our Story</h1>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story">
+          <div class="story__img-wrap fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1600565193348-f74bd3960d91?w=800&q=80"
+              alt="Chef plating a dish in the Maison Lumière kitchen"
+              width="800"
+              height="1000"
+              loading="lazy"
+            />
+          </div>
+          <div class="story__text fade-in">
+            <p class="section-eyebrow">Who We Are</p>
+            <h2 class="section-title" id="story-heading">Born from a love of French tradition</h2>
+            <p>
+              Maison Lumière was founded in 2008 by Chef Édouard Renard, who trained under three Michelin-starred kitchens in Lyon and Paris before bringing classical French cuisine to Singapore. The name — meaning "House of Light" — reflects his belief that great food illuminates the senses.
+            </p>
+            <p>
+              Nestled in the heart of the city, our dining room seats just 48 guests, ensuring that every table receives the attention and care it deserves. We source our produce daily from local markets, supplemented by carefully selected imports — Brittany sea salt, Valrhona chocolate, and aged Comté from the Jura mountains.
+            </p>
+            <p>
+              Nearly two decades on, Maison Lumière remains a family endeavour. Édouard's daughter, Amélie Renard, joined the team in 2019 as Sommelier, curating a cellar of over 300 labels spanning the Loire Valley to Burgundy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section section--dark" aria-labelledby="values-heading">
+      <div class="container" style="text-align:center;">
+        <p class="section-eyebrow">What Guides Us</p>
+        <h2 class="section-title" id="values-heading" style="color:var(--color-cream);">Our philosophy</h2>
+        <div class="section-divider" aria-hidden="true"></div>
+        <div class="values-grid">
+
+          <article class="value-card fade-in">
+            <span class="value-card__icon" aria-hidden="true">&#9673;</span>
+            <h3 class="value-card__title">Seasonal Integrity</h3>
+            <p class="value-card__desc">Our menu changes with the seasons. We write new dishes around the best available produce, not the other way around.</p>
+          </article>
+
+          <article class="value-card fade-in">
+            <span class="value-card__icon" aria-hidden="true">&#9673;</span>
+            <h3 class="value-card__title">Classical Technique</h3>
+            <p class="value-card__desc">Every sauce begins with a handmade stock. We honour the canon of French cuisine while leaving room for quiet innovation.</p>
+          </article>
+
+          <article class="value-card fade-in">
+            <span class="value-card__icon" aria-hidden="true">&#9673;</span>
+            <h3 class="value-card__title">Unhurried Hospitality</h3>
+            <p class="value-card__desc">A meal at Maison Lumière is an evening, not an appointment. We pace each table individually and never rush a course.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section" aria-labelledby="team-heading">
+      <div class="container" style="text-align:center;">
+        <p class="section-eyebrow">The People Behind the Kitchen</p>
+        <h2 class="section-title" id="team-heading">Meet our team</h2>
+        <div class="section-divider" aria-hidden="true"></div>
+        <div class="team-grid">
+
+          <article class="team-card fade-in">
+            <div class="team-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1583394293214-c6a1a0827f53?w=400&q=80"
+                alt="Portrait of Chef Édouard Renard"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="team-card__name">Édouard Renard</h3>
+            <span class="team-card__role">Executive Chef &amp; Founder</span>
+            <p class="team-card__bio">Trained at Bocuse and Troisgros, Édouard brings three decades of classical French technique to every plate.</p>
+          </article>
+
+          <article class="team-card fade-in">
+            <div class="team-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=400&q=80"
+                alt="Portrait of Amélie Renard, Head Sommelier"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="team-card__name">Amélie Renard</h3>
+            <span class="team-card__role">Head Sommelier</span>
+            <p class="team-card__bio">A WSET Diploma holder, Amélie curates the cellar and personally recommends pairings for every tasting menu.</p>
+          </article>
+
+          <article class="team-card fade-in">
+            <div class="team-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80"
+                alt="Portrait of Chef de Cuisine Marcus Tan"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="team-card__name">Marcus Tan</h3>
+            <span class="team-card__role">Chef de Cuisine</span>
+            <p class="team-card__bio">Marcus leads the kitchen brigade, overseeing daily mise en place and bringing precision to every service.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section class="section section--dark" aria-labelledby="awards-heading">
+      <div class="container" style="text-align:center;">
+        <p class="section-eyebrow">Recognition</p>
+        <h2 class="section-title" id="awards-heading" style="color:var(--color-cream);">Awards &amp; accolades</h2>
+        <div class="section-divider" aria-hidden="true"></div>
+        <div class="awards">
+          <div class="award fade-in">
+            <p class="award__year">2024</p>
+            <p class="award__name">Singapore's Finest Restaurants — Gold</p>
+          </div>
+          <div class="award fade-in">
+            <p class="award__year">2023</p>
+            <p class="award__name">Asia's 50 Best — Recommended</p>
+          </div>
+          <div class="award fade-in">
+            <p class="award__year">2022</p>
+            <p class="award__name">Wine &amp; Dine Singapore — Best French</p>
+          </div>
+          <div class="award fade-in">
+            <p class="award__year">2019</p>
+            <p class="award__name">Tatler Dining — Restaurant of the Year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-banner">
+      <p class="section-eyebrow">Join Us</p>
+      <h2 class="section-title">Ready for an unforgettable evening?</h2>
+      <p>Tables fill quickly — we recommend booking at least one week in advance.</p>
+      <a href="index.html#reservations" class="btn btn--primary">Reserve a Table</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <p class="footer__logo">Maison Lumière</p>
+          <p class="footer__tagline">Authentic French cuisine<br>in the heart of Singapore.</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Visit Us</h3>
+          <address>
+            12 Raffles Place, #03-01<br>
+            Singapore 048616<br>
+            <a href="tel:+6561234567">+65 6123 4567</a><br>
+            <a href="mailto:reservations@maisonlumiere.sg">reservations@maisonlumiere.sg</a>
+          </address>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Hours</h3>
+          <p>Tuesday – Friday<br>Lunch 12:00 – 14:30<br>Dinner 18:30 – 22:30</p>
+          <p>Saturday – Sunday<br>Dinner 18:00 – 23:00</p>
+          <p>Closed Monday</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Follow</h3>
+          <ul role="list">
+            <li><a href="#" aria-label="Maison Lumière on Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Maison Lumière on Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Maison Lumière on TripAdvisor">TripAdvisor</a></li>
+          </ul>
+          <a href="about.html" style="display:inline-block;margin-top:var(--space-sm);font-family:var(--font-sans);font-size:0.8rem;color:var(--color-gold);">About Us</a>
+        </div>
+
+      </div>
+
+      <div class="footer__bar">
+        <p>&copy; <span id="footer-year"></span> Maison Lumière Pte Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    var y = document.getElementById('footer-year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
