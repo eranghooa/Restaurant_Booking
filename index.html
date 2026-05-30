@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maison Lumière — Upscale French dining in Singapore. Reserve your table online for an unforgettable culinary experience." />
+  <title>Maison Lumière | Fine French Dining · Singapore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard users -->
+  <a href="#menu" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="#hero" aria-label="Maison Lumière — return to top">
+        Maison Lumière
+      </a>
+
+      <button
+        class="nav__hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#reservations">Reservations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ======================================================
+         HERO
+    ====================================================== -->
+    <section id="hero" class="hero" aria-label="Welcome to Maison Lumière">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Est. 2008 &middot; Singapore</p>
+        <h1 class="hero__title">Maison Lumière</h1>
+        <p class="hero__tagline">Authentic French cuisine in the heart of the city</p>
+        <a href="#reservations" class="btn btn--primary">Reserve a Table</a>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         MENU
+    ====================================================== -->
+    <section id="menu" class="menu section" aria-labelledby="menu-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <p class="section-eyebrow">Curated with Passion</p>
+          <h2 id="menu-heading" class="section-title">Our Menu</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+          <p class="section-intro">Each dish is crafted from the finest seasonal produce, inspired by the great culinary traditions of France.</p>
+        </div>
+
+        <!-- Entrées -->
+        <div class="menu-category fade-in">
+          <h3 class="menu-category__title">Entr&eacute;es</h3>
+          <div class="menu-grid">
+
+            <article class="menu-card" aria-label="Escargots de Bourgogne">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1559742811-822873691df8?w=600&q=80"
+                  alt="Escargots de Bourgogne — garlicky Burgundy snails nestled in their shells, baked in herb butter"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Escargots de Bourgogne</h4>
+                <p class="menu-card__desc">Classic Burgundy snails baked in parsley-garlic butter, served with crusty baguette</p>
+                <p class="menu-card__price">S$28</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Terrine de Foie Gras">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80"
+                  alt="Terrine de Foie Gras — silky duck liver terrine sliced and plated with golden brioche toast"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Terrine de Foie Gras</h4>
+                <p class="menu-card__desc">Silky duck liver terrine with Sauternes jelly, toasted brioche, and fig compote</p>
+                <p class="menu-card__price">S$42</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Soupe à l'Oignon Gratinée">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80"
+                  alt="Soupe à l'Oignon Gratinée — French onion soup with a golden Gruyère crust bubbling on top"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Soupe &agrave; l&rsquo;Oignon Gratin&eacute;e</h4>
+                <p class="menu-card__desc">Slow-caramelised onion broth topped with a golden aged Gruyère crust, finished under the grill</p>
+                <p class="menu-card__price">S$22</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Plats Principaux -->
+        <div class="menu-category fade-in">
+          <h3 class="menu-category__title">Plats Principaux</h3>
+          <div class="menu-grid">
+
+            <article class="menu-card" aria-label="Coq au Vin à l'Ancienne">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80"
+                  alt="Coq au Vin à l'Ancienne — free-range chicken braised in red Burgundy wine with mushrooms and lardons"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Coq au Vin &agrave; l&rsquo;Ancienne</h4>
+                <p class="menu-card__desc">Free-range chicken braised in Burgundy wine with lardons, pearl onions, and wild mushrooms</p>
+                <p class="menu-card__price">S$58</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Confit de Canard">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80"
+                  alt="Confit de Canard — crispy-skinned slow-cooked duck leg served with golden Sarladaise potatoes"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Confit de Canard</h4>
+                <p class="menu-card__desc">Slow-cooked duck leg with crackling skin, Sarladaise potatoes, and cherry-port jus</p>
+                <p class="menu-card__price">S$68</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Bouillabaisse Marseillaise">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=600&q=80"
+                  alt="Bouillabaisse Marseillaise — traditional Provençal seafood stew with rouille and croutons"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Bouillabaisse Marseillaise</h4>
+                <p class="menu-card__desc">Traditional Provençal seafood stew with saffron broth, rouille, croutons, and Parmesan</p>
+                <p class="menu-card__price">S$72</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-category fade-in">
+          <h3 class="menu-category__title">Desserts</h3>
+          <div class="menu-grid">
+
+            <article class="menu-card" aria-label="Crème Brûlée à la Vanille">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80"
+                  alt="Crème Brûlée à la Vanille — silky vanilla custard with a perfectly caramelised sugar crust"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Cr&egrave;me Br&ucirc;l&eacute;e &agrave; la Vanille</h4>
+                <p class="menu-card__desc">Silky Madagascar vanilla custard beneath a crackling caramelised sugar crust</p>
+                <p class="menu-card__price">S$18</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Tarte Tatin Caramélisée">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80"
+                  alt="Tarte Tatin Caramélisée — upside-down caramelised apple tart served warm with crème fraîche"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Tarte Tatin Caramel&iacute;s&eacute;e</h4>
+                <p class="menu-card__desc">Upside-down caramelised apple tart, warm from the oven, with a cloud of crème fraîche</p>
+                <p class="menu-card__price">S$20</p>
+              </div>
+            </article>
+
+            <article class="menu-card" aria-label="Soufflé au Chocolat Noir">
+              <div class="menu-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80"
+                  alt="Soufflé au Chocolat Noir — a warm dark chocolate soufflé risen to perfection in its ramekin"
+                  loading="lazy"
+                  width="600"
+                  height="450"
+                />
+              </div>
+              <div class="menu-card__body">
+                <h4 class="menu-card__name">Souffl&eacute; au Chocolat Noir</h4>
+                <p class="menu-card__desc">Warm dark chocolate soufflé, risen to order, served with Tahitian vanilla ice cream</p>
+                <p class="menu-card__price">S$24</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+         TESTIMONIALS
+    ====================================================== -->
+    <section id="testimonials" class="testimonials section section--dark" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <p class="section-eyebrow">Guest Experiences</p>
+          <h2 id="testimonials-heading" class="section-title">What Our Guests Say</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+
+        <div class="carousel" role="region" aria-label="Guest testimonials">
+          <div class="carousel__track" id="carousel-track" aria-live="polite">
+
+            <article class="testimonial-card" aria-label="Testimonial from Isabelle Moreau">
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <blockquote class="testimonial-card__quote">
+                &ldquo;An extraordinary evening. The duck confit melted in my mouth, and the sommelier&rsquo;s pairing was inspired. Maison Lumière is in a class entirely of its own.&rdquo;
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <p class="testimonial-card__name">&mdash; Isabelle Moreau</p>
+              </footer>
+            </article>
+
+            <article class="testimonial-card" aria-label="Testimonial from Jonathan Teo">
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <blockquote class="testimonial-card__quote">
+                &ldquo;We celebrated our anniversary here and it exceeded every expectation. The soufflé was a revelation — and the service was impeccable without ever being intrusive.&rdquo;
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <p class="testimonial-card__name">&mdash; Jonathan Teo</p>
+              </footer>
+            </article>
+
+            <article class="testimonial-card" aria-label="Testimonial from Priya Ramaswamy">
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <blockquote class="testimonial-card__quote">
+                &ldquo;From the moment we walked through the door, we felt transported to Paris. The bouillabaisse was deeply flavoured, and the wine list extraordinarily curated.&rdquo;
+              </blockquote>
+              <footer class="testimonial-card__footer">
+                <p class="testimonial-card__name">&mdash; Priya Ramaswamy</p>
+              </footer>
+            </article>
+
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__btn carousel__btn--prev" aria-label="Previous testimonial">&#8592;</button>
+            <div class="carousel__dots" id="carousel-dots" role="tablist" aria-label="Testimonial navigation"></div>
+            <button class="carousel__btn carousel__btn--next" aria-label="Next testimonial">&#8594;</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+         RESERVATIONS
+    ====================================================== -->
+    <section id="reservations" class="reservations section" aria-labelledby="reservations-heading">
+      <div class="container container--narrow">
+
+        <div class="section-header fade-in">
+          <p class="section-eyebrow">Join Us</p>
+          <h2 id="reservations-heading" class="section-title">Reserve a Table</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+          <p class="section-intro">We look forward to welcoming you. For parties larger than 8, please call us directly.</p>
+        </div>
+
+        <form id="reservation-form" class="reservation-form fade-in" novalidate aria-label="Table reservation enquiry form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="full-name">Full Name <span class="required-star" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                autocomplete="name"
+                placeholder="Your full name"
+                required
+                aria-required="true"
+                aria-describedby="full-name-error"
+              />
+              <span class="form-error" id="full-name-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="required-star" aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+                aria-required="true"
+                aria-describedby="email-error"
+              />
+              <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required-star" aria-hidden="true">*</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="+65 9123 4567"
+                required
+                aria-required="true"
+                aria-describedby="phone-error"
+              />
+              <span class="form-error" id="phone-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Number of Guests <span class="required-star" aria-hidden="true">*</span></label>
+              <select id="guests" name="guests" required aria-required="true" aria-describedby="guests-error">
+                <option value="">Select guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="7">7 Guests</option>
+                <option value="8">8+ Guests (please call us)</option>
+              </select>
+              <span class="form-error" id="guests-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date <span class="required-star" aria-hidden="true">*</span></label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                required
+                aria-required="true"
+                aria-describedby="date-error"
+              />
+              <span class="form-error" id="date-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="time">Preferred Time <span class="required-star" aria-hidden="true">*</span></label>
+              <select id="time" name="time" required aria-required="true" aria-describedby="time-error">
+                <option value="">Select time</option>
+                <optgroup label="Lunch Service">
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                </optgroup>
+                <optgroup label="Dinner Service">
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                </optgroup>
+              </select>
+              <span class="form-error" id="time-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-group form-group--full">
+            <label for="special-requests">Special Requests</label>
+            <textarea
+              id="special-requests"
+              name="special-requests"
+              rows="4"
+              placeholder="Dietary requirements, allergies, celebrations, seating preferences…"
+              aria-describedby="special-requests-hint"
+            ></textarea>
+            <span class="form-hint" id="special-requests-hint">Optional — we will do our utmost to accommodate your needs.</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Confirm Reservation</button>
+
+        </form>
+
+        <!-- Success panel — hidden until valid form submission -->
+        <div id="form-success" class="form-success" role="alert" aria-live="polite" hidden>
+          <div class="form-success__icon" aria-hidden="true">&#10022;</div>
+          <h3 class="form-success__title">Reservation Received</h3>
+          <p class="form-success__message" id="success-message"></p>
+          <p class="form-success__sub">A confirmation will be sent to your email address. We look forward to welcoming you to Maison Lumière.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-col--brand">
+          <p class="footer-logo">Maison Lumi&egrave;re</p>
+          <p class="footer-tagline">Fine French Cuisine &middot; Singapore</p>
+          <p class="footer-brand-desc">A sanctuary of refined taste, where every detail speaks of care and every meal becomes a memory.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Find Us</h4>
+          <address>
+            <p>12 Bukit Pasoh Road</p>
+            <p>Singapore 089834</p>
+            <p><a href="tel:+6562218888">+65 6221 8888</a></p>
+            <p><a href="mailto:reservations@maisonlumiere.sg">reservations@maisonlumiere.sg</a></p>
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Hours</h4>
+          <dl class="hours-list">
+            <div class="hours-row"><dt>Lunch</dt><dd>Tue &ndash; Sun, 12:00 &ndash; 14:30</dd></div>
+            <div class="hours-row"><dt>Dinner</dt><dd>Tue &ndash; Sun, 18:00 &ndash; 22:00</dd></div>
+            <div class="hours-row"><dt>Monday</dt><dd>Closed</dd></div>
+          </dl>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Follow</h4>
+          <ul class="social-links" role="list">
+            <li><a href="#" aria-label="Maison Lumière on Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Maison Lumière on Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Maison Lumière on TripAdvisor">TripAdvisor</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Maison Lumi&egrave;re. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
