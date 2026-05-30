@@ -2,6 +2,8 @@
 
 A single-page booking website for **Maison Lumière**, an upscale French restaurant in Singapore. Built with pure HTML, CSS, and JavaScript — no frameworks, no build tools.
 
+![Maison Lumière website screenshot](screenshot.png)
+
 ## Live Preview
 
 Open `index.html` directly in any browser. No server or build step required.
